@@ -174,6 +174,76 @@ Docker Compose levanta los servicios en este orden automáticamente:
 
 ---
 
+## HU-007 — Ejecutar Migraciones de Base de Datos
+
+**Como** desarrollador,  
+**quiero** ejecutar migraciones versionadas de la base de datos,  
+**para** mantener sincronizado el esquema entre ambientes.
+
+### Criterios de aceptación:
+- Las migraciones se ejecutan automáticamente al levantar el entorno
+- El sistema registra qué migraciones ya fueron aplicadas
+- Los ambientes DEV, QA y MAIN usan el mismo esquema
+- Nuevas migraciones pueden agregarse sin modificar las anteriores
+
+---
+
+## HU-008 — Registrar Auditoría de Operaciones
+
+**Como** administrador del sistema,  
+**quiero** almacenar un historial de operaciones realizadas sobre el inventario,  
+**para** mantener trazabilidad de los cambios realizados.
+
+### Criterios de aceptación:
+- Cada operación CRUD genera un registro de auditoría
+- El registro almacena usuario, fecha y acción realizada
+- Los eventos quedan persistidos en la base de datos
+- Los registros pueden consultarse posteriormente
+
+---
+
+## HU-009 — Ejecutar Despliegues Automáticos
+
+**Como** desarrollador,  
+**quiero** desplegar automáticamente el sistema mediante Jenkins,  
+**para** reducir errores manuales durante integración y despliegue.
+
+### Criterios de aceptación:
+- Jenkins ejecuta pruebas automáticamente
+- El pipeline construye las imágenes Docker
+- El despliegue se ejecuta automáticamente después de validar las pruebas
+- El resultado del pipeline es visible para el equipo
+
+---
+
+## HU-010 — Acceder al Sistema desde la Nube
+
+**Como** usuario administrador,  
+**quiero** acceder al sistema desplegado en AWS,  
+**para** utilizar la aplicación desde cualquier ubicación.
+
+### Criterios de aceptación:
+- El sistema está disponible mediante una IP o dominio público
+- Los servicios backend responden correctamente desde AWS
+- PostgreSQL mantiene persistencia de datos
+- Los ambientes pueden desplegarse remotamente
+
+---
+
+## HU-011 — Monitorear el Estado del Sistema
+
+**Como** administrador del sistema,  
+**quiero** visualizar métricas y logs centralizados,  
+**para** detectar errores y monitorear el estado de los servicios.
+
+### Criterios de aceptación:
+- Los logs de los servicios se centralizan en una única plataforma
+- El sistema muestra métricas básicas de CPU, memoria y estado de contenedores
+- Los errores críticos pueden identificarse desde un panel central
+- Los ambientes DEV, QA y MAIN pueden monitorearse independientemente
+
+---
+
 ### Resumen de H.U.
 
 | ID | Historia | Prioridad | Estimación | Servicio |
@@ -183,8 +253,11 @@ Docker Compose levanta los servicios en este orden automáticamente:
 | HU-003 | Ver Inventario | Alta | 2 puntos | backend-2 |
 | HU-004 | Agregar Producto | Media | 3 puntos | backend-2 |
 | HU-005 | Editar Producto | Media | 3 puntos | backend-2 |
-| HU-006 | Eliminar Producto | Media | 2 puntos | backend-2 |
-
+| HU-007 | Ejecutar Migraciones de Base de Datos | Alta | 3 puntos | backend-2 |
+| HU-008 | Registrar Auditoría de Operaciones | Media | 3 puntos | backend-2 |
+| HU-009 | Ejecutar Despliegues Automáticos | Alta | 5 puntos | Jenkins |
+| HU-010 | Acceder al Sistema desde la Nube | Alta | 5 puntos | AWS |
+| HU-011 | Monitorear el Estado del Sistema | Media | 4 puntos | Observabilidad |
 ---
 
 ## Flujo de ramas

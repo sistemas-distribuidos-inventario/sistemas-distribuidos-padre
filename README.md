@@ -253,6 +253,7 @@ Docker Compose levanta los servicios en este orden automáticamente:
 | HU-003 | Ver Inventario | Alta | 2 puntos | backend-2 |
 | HU-004 | Agregar Producto | Media | 3 puntos | backend-2 |
 | HU-005 | Editar Producto | Media | 3 puntos | backend-2 |
+| HU-006 | Eliminar Producto | Media | 2 puntos | backend-2 |
 | HU-007 | Ejecutar Migraciones de Base de Datos | Alta | 3 puntos | backend-2 |
 | HU-008 | Registrar Auditoría de Operaciones | Media | 3 puntos | backend-2 |
 | HU-009 | Ejecutar Despliegues Automáticos | Alta | 5 puntos | Jenkins |

@@ -1,0 +1,33 @@
+version: '3.8'
+
+
+services:
+
+  jenkins:
+    build: .
+    container_name: jenkins-inventario
+    restart: unless-stopped
+
+    ports:
+      - "8080:8080"
+      - "50000:50000"
+
+    environment:
+      - JAVA_OPTS=-Djenkins.install.runSetupWizard=false
+
+    volumes:
+      - jenkins_home:/var/jenkins_home
+
+      - /var/run/docker.sock:/var/run/docker.sock
+
+      - ../:/workspace:ro
+
+    networks:
+      - red-inventario
+
+volumes:
+  jenkins_home:
+
+networks:
+  red-inventario:
+    external: true

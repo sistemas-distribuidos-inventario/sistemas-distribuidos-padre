@@ -1,0 +1,25 @@
+# Pipeline principal
+workflow-aggregator
+pipeline-stage-view
+
+# Integración Git / SCM
+git
+github
+github-branch-source
+
+# Publicación de resultados de pruebas JUnit
+junit
+
+# Notificaciones y UI
+build-timeout
+timestamper
+ws-cleanup
+ansicolor
+
+# Credenciales seguras
+credentials-binding
+ssh-credentials
+
+# Docker (para pasos docker.build / docker.withRegistry)
+docker-workflow
+docker-plugin
